@@ -1,0 +1,28 @@
+# Put files/directories that should be ignored in this file.
+# Lines that start with '# ' are comments.
+
+# gitignore
+\.gitignore
+
+# emacs
+*~
+
+# vim
+*.sw[a-z]
+
+# subversion
+*/.svn/*
+
+# Berksfile / Rakefile / Gemfile / ohmy
+*/*file
+*/*file.lock
+
+# Test files
+\.travis.yml
+\.kitchen.yml
+\.rubocop.yml
+*/spec
+*/test
+*/vendor
+*/bin
+*/bundle
