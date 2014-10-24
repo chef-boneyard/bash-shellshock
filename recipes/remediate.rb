@@ -20,6 +20,11 @@
 # Install/configure something here
 # Replace this with meaningful resources
 
+include_recipe "ohai::default"
+
+ohai "custom_plugins" do
+  action :nothing
+end
 
 if node['languages']['bash']['shellshock_vulnerable']
 
@@ -35,16 +40,9 @@ if node['languages']['bash']['shellshock_vulnerable']
     command "bash -c \"env x='() { :;}; echo Your bash is very likely vulnerable as this exited 0. Non-vulnerable bash will exit 1' bash -c 'echo this is a test' | grep 'Your bash' > /dev/null 2>&1\""
     returns [1]
     ignore_failure true
-    notifies :run, "ruby_block[update_attribute]", :immediately
+    notifies :reload, "ohai[custom_plugins]", :immediately
   end
 
-end
-
-ruby_block "update_attribute" do
-  block do
-    node.default['languages']['bash']['shellshock_vulnerable'] = 'false'
-  end
-  action :nothing
 end
 
 
