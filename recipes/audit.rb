@@ -17,13 +17,7 @@
 # limitations under the License.
 #
 
-# Install/configure something here
-# Replace this with meaningful resources
+# Install the shellshock ohai plugin to add ['languages']['bash']
+# to OHAI-collected data
 
 include_recipe 'ohai::default'
-
-if node['languages']['bash']['shellshock_vulnerable']
-  ::Chef::Log.fatal('This host is vulnerable to cve-2014-7169')
-end
-
-log "End of Audit recipe: The shellshock_vulnerable variable is now #{node['languages']['bash']['shellshock_vulnerable']}"

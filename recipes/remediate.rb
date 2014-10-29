@@ -17,33 +17,20 @@
 # limitations under the License.
 #
 
-# Install/configure something here
-# Replace this with meaningful resources
-
-include_recipe "ohai::default"
-
-ohai "custom_plugins" do
-  action :nothing
+# Upgrade bash from package manager to latest version
+package 'bash' do
+  action :upgrade
+  only_if { node['languages']['bash']['shellshock_vulnerable'] }
 end
 
-if node['languages']['bash']['shellshock_vulnerable']
-
-  package 'bash' do
-    action :upgrade
+# Reload OHAI to provide correct data
+ruby_block 'reload_ohai' do
+  block do
+    o = Ohai::System.new
+    o.all_plugins
+    node.automatic_attrs.merge! o.data
   end
-
-  # Can't just reload the ohai plugin because it will use the same
-  # potentially compromised shell as the original run
-  execute "test_shellshock" do
-    user "root"
-    cwd "/tmp"
-    command "bash -c \"env x='() { :;}; echo Your bash is very likely vulnerable as this exited 0. Non-vulnerable bash will exit 1' bash -c 'echo this is a test' | grep 'Your bash' > /dev/null 2>&1\""
-    returns [1]
-    ignore_failure true
-    notifies :reload, "ohai[custom_plugins]", :immediately
+  only_if do
+    node['languages']['bash']['shellshock_vulnerable']
   end
-
 end
-
-
-log "End of Remediate recipe: The shellshock_vulnerable variable is now #{node['languages']['bash']['shellshock_vulnerable']}"
