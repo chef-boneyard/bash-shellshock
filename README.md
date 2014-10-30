@@ -40,12 +40,13 @@ Recipes
 
 * Installs an OHAI plugin that will automatically audit nodes for the Shellshock vulnerability. This plugin creates two new values in OHAI:
 
-  node['languages']['bash']['version'], a string. Returned from `bash --version`.
+  node['languages']['bash']['version'], a string. Returned from `bash --version`.  
   node['languages']['bash']['shellshock_vulnerable'], a boolean. True if node is vulnerable.
 
 ### cve-2014-7169::remediate
 
 * If the node is marked vulnerable by the audit recipe, this recipe will attempt to upgrade bash via the native packaging system. Includes the audit recipe.
+* Audits and remediates Bash-CVE-2014-7169 ("Shellshock")
 
 License and Author
 ------------------
