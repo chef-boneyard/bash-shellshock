@@ -1,8 +1,15 @@
-Skeleton Cookbook
+CVE-2014-7169 Cookbook
 =================
 
-This cookbook is designed to test and optionally remediate the bash
-"shellshock" bug, more formally known as cve-2014-7169.
+This cookbook is designed to test and optionally remediate the bash "shellshock" bug, more formally known as cve-2014-7169.
+
+Once Chef-client has executed this recipe on one or more hosts, a list of all nodes that are vulnerable to the "Shellshock" exploit can be retrieved from the Chef server via `knife search:`
+
+`knife search node 'languages_bash_shellshock_vulnerable'`
+
+Limitations
+------------
+This cookbook relies on the OS-native packaging system to provide patched versions of the bash package.
 
 Requirements
 ------------
@@ -11,37 +18,43 @@ Requirements
 
 * Tested on CentOS 6.5
 * Tested on Ubuntu 12.04
+* Should work on a wide variety of other systems
 
-### Cookbooks:
+### Cookbook Dependencies:
 
-* chef_handler
+* ohai (https://supermarket.getchef.com/cookbooks/ohai)
 
 Attributes
 ----------
 
-*List attributes here*
+* No user-configurable attributes
 
 Recipes
 -------
 
 ### cve-2014-7169::default
 
-* Audits and remediates cve-2014-7169 ("Shellshock")
+* Audits and remediates Bash-CVE-2014-7169 ("Shellshock")
 
 ### cve-2014-7169::audit
 
-* Installs an OHAI plugin that will automatically audit nodes for the Shellshock vulnerability, and sets a node attribute marking the node as vulnerable.
+* Installs an OHAI plugin that will automatically audit nodes for the Shellshock vulnerability. This plugin creates two new values in OHAI:
+
+  node['languages']['bash']['version'], a string. Returned from `bash --version`.
+  node['languages']['bash']['shellshock_vulnerable'], a boolean. True if node is vulnerable.
 
 ### cve-2014-7169::remediate
 
 * If the node is marked vulnerable by the audit recipe, this recipe will attempt to upgrade bash via the native packaging system. Includes the audit recipe.
 
-
-
 License and Author
 ------------------
 
-Author:: Chef Software, Inc (support@getchef.com)
+Author:: Chef Software, Inc (support@getchef.com)  
+Author:: Charles Johnson (charles@getchef.com)  
+Author:: Nicolas Rycar (nrycar@getchef.com)  
+Author:: Julian Dunn (jdunn@getchef.com)
+
 
 Copyright:: 2014, Chef Software, Inc.
 

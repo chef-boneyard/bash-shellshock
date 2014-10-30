@@ -1,4 +1,5 @@
-1.0.0 (DATE)
+1.0.0 (October 29th, 2014)
 ------------
 
-* _Add your changes here_
+* Initial release
+
