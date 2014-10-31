@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'cve-2014-7169::remediate' do
+describe 'bash-shellshock::remediate' do
   context 'when the [\'languages\'][\'bash\'][\'shellshock_vulnerable\'] '\
           'attribute is true' do
 

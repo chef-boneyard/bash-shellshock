@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: cve-2014-7169
+# Cookbook Name:: bash-shellshock
 # Recipe:: audit
 #
 # Copyright (C) 2014 CHEF Software, Inc. <support@getchef.com>

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: cve-2014-7169
+# Cookbook Name:: bash-shellshock
 # Recipe:: default
 #
 # Copyright (C) 2014 CHEF Software, Inc. <support@getchef.com>
@@ -17,5 +17,5 @@
 # limitations under the License.
 #
 
-include_recipe 'cve-2014-7169::audit'
-include_recipe 'cve-2014-7169::remediate'
+include_recipe 'bash-shellshock::audit'
+include_recipe 'bash-shellshock::remediate'

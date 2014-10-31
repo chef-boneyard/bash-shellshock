@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'cve-2014-7169::default' do
+describe 'bash-shellshock::default' do
 
   describe file('/etc/chef/ohai_plugins/bash.rb') do
     it { should be_file }

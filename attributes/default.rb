@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: cve-2014-7169
+# Cookbook Name:: bash-shellshock
 # Attributes:: default
 #
 # Copyright (C) 2014 Chef Software, Inc. <support@getchef.com>
@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-default['ohai']['plugins']['cve-2014-7169'] = 'plugins'
+default['ohai']['plugins']['bash-shellshock'] = 'plugins'

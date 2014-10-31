@@ -22,6 +22,6 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[cve-2014-7169::default]
+      - recipe[bash-shellshock::default]
     attributes:
 
