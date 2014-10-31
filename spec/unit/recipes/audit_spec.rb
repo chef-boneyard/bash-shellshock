@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'cve-2014-7169::audit' do
+describe 'bash-shellshock::audit' do
   let(:chef_run) do
     runner = ChefSpec::Runner.new
     runner.converge(described_recipe)

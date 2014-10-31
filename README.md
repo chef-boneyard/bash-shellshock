@@ -1,4 +1,4 @@
-CVE-2014-7169 Cookbook
+bash-shellshock Cookbook
 =================
 
 This cookbook is designed to test and optionally remediate the bash "shellshock" bug, more formally known as cve-2014-7169.
@@ -32,21 +32,30 @@ Attributes
 Recipes
 -------
 
-### cve-2014-7169::default
+### bash-shellshock::default
 
 * Audits and remediates Bash-CVE-2014-7169 ("Shellshock")
 
-### cve-2014-7169::audit
+### bash-shellshock::audit
 
 * Installs an OHAI plugin that will automatically audit nodes for the Shellshock vulnerability. This plugin creates two new values in OHAI:
 
   node['languages']['bash']['version'], a string. Returned from `bash --version`.  
   node['languages']['bash']['shellshock_vulnerable'], a boolean. True if node is vulnerable.
 
-### cve-2014-7169::remediate
+### bash-shellshock::remediate
 
 * If the node is marked vulnerable by the audit recipe, this recipe will attempt to upgrade bash via the native packaging system. Includes the audit recipe.
 * Audits and remediates Bash-CVE-2014-7169 ("Shellshock")
+
+Testing
+-------
+
+### Chefspec
+* Includes a Chefspec suite. This can be run with rspec.
+
+### Test Kitchen / Serverspec
+* Includes Test-kitchen support for Ubuntu 12.04 and Centos 6.5 operating systems. The .kitchen.yml file defaults to the Vagrant driver. Universal Serverspec tests valid for both operating systems are included.
 
 License and Author
 ------------------

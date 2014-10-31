@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'cve-2014-7169::default' do
+describe 'bash-shellshock::default' do
   let(:chef_run) do
     runner = ChefSpec::Runner.new
     runner.node.set['languages']['bash']['shellshock_vulnerable'] = 'true'
@@ -8,15 +8,15 @@ describe 'cve-2014-7169::default' do
   end
 
   it 'sets the default attributes correctly' do
-    expect(chef_run.node['ohai']['plugins']['cve-2014-7169']).to \
+    expect(chef_run.node['ohai']['plugins']['bash-shellshock']).to \
     eq('plugins')
   end
 
   it 'includes the audit recipe' do
-    expect(chef_run).to include_recipe('cve-2014-7169::audit')
+    expect(chef_run).to include_recipe('bash-shellshock::audit')
   end
 
   it 'includes the remediate recipe' do
-    expect(chef_run).to include_recipe('cve-2014-7169::remediate')
+    expect(chef_run).to include_recipe('bash-shellshock::remediate')
   end
 end
