@@ -22,7 +22,8 @@
 
 include_recipe 'ohai::default'
 
-log "\n\n##############################################################################\n       # This host is vulnerable to ShellShock!  Please remediate!                  #\n       ##############################################################################\n\n" do
-  level :info
+log 'ShellShock Audit Warning' do 
+  message "\n\n##############################################################################\n       # This host is vulnerable to ShellShock!  Please remediate!                  #\n       ##############################################################################"
   only_if { node['languages']['bash']['shellshock_vulnerable'] }
+  level :info
 end
