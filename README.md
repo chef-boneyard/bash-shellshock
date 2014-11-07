@@ -5,7 +5,7 @@ This cookbook is designed to test and optionally remediate the bash "shellshock"
 
 Once Chef-client has executed this recipe on one or more hosts, a list of all nodes that are vulnerable to the "Shellshock" exploit can be retrieved from the Chef server via `knife search:`
 
-`knife search node 'languages_bash_shellshock_vulnerable'`
+`knife search node 'bash:shellshock_vulnerable'`
 
 Limitations
 ------------
