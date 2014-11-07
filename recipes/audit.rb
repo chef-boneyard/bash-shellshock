@@ -21,3 +21,8 @@
 # to OHAI-collected data
 
 include_recipe 'ohai::default'
+
+log "This host is vulnerable to ShellShock!  Please remediate!" do
+  level :info
+  only_if { node['languages']['bash']['shellshock_vulnerable'] }
+end
