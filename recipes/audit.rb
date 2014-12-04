@@ -21,3 +21,9 @@
 # to OHAI-collected data
 
 include_recipe 'ohai::default'
+
+log 'ShellShock Audit Warning' do 
+  message "\n\n##############################################################################\n       # This host is vulnerable to ShellShock!  Please remediate!                  #\n       ##############################################################################"
+  only_if { node['languages']['bash']['shellshock_vulnerable'] }
+  level :info
+end
