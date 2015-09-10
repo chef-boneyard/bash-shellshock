@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-Ohai.plugin(:'Bash') do
+Ohai.plugin(:Bash) do
   provides 'languages/bash'
   depends 'languages'
 

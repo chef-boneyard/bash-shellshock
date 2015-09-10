@@ -9,7 +9,7 @@ describe 'bash-shellshock::default' do
 
   it 'sets the default attributes correctly' do
     expect(chef_run.node['ohai']['plugins']['bash-shellshock']).to \
-    eq('plugins')
+      eq('plugins')
   end
 
   it 'includes the audit recipe' do

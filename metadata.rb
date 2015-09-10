@@ -11,10 +11,9 @@ recipe            'bash-shellshock::remediate', 'Audits & remediates cve-2014-71
 
 depends 'ohai', '~> 2.0'
 
-%w{centos debian fedora freebsd gentoo redhat scientific oracle ubuntu }.each do |os|
+%w(centos debian fedora freebsd gentoo redhat scientific oracle ubuntu ).each do |os|
   supports os
 end
-
 
 source_url 'https://github.com/chef-cookbooks/bash-shellshock' if respond_to?(:source_url)
 issues_url 'https://github.com/chef-cookbooks/bash-shellshock/issues' if respond_to?(:issues_url)

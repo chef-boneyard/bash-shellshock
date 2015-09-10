@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe 'bash-shellshock::default' do
-
   describe file('/etc/chef/ohai_plugins/bash.rb') do
     it { should be_file }
     it { should be_mode 644 }
@@ -17,5 +16,4 @@ describe 'bash-shellshock::default' do
   describe command(bash_command) do
     its(:exit_status) { should eq 1 }
   end
-
 end
