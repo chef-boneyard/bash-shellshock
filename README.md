@@ -1,6 +1,9 @@
 bash-shellshock Cookbook
 =================
 
+[![Build Status](https://travis-ci.org/chef-cookbooks/bash-shellshock.svg?branch=master)](http://travis-ci.org/chef-cookbooks/bash-shellshock)
+[![Cookbook Version](https://img.shields.io/cookbook/v/bash-shellshock.svg)](https://supermarket.chef.io/cookbooks/bash-shellshock)
+
 This cookbook is designed to test and optionally remediate the bash "shellshock" bug, more formally known as cve-2014-7169.
 
 Once Chef-client has executed this recipe on one or more hosts, a list of all nodes that are vulnerable to the "Shellshock" exploit can be retrieved from the Chef server via `knife search:`
@@ -57,16 +60,15 @@ Testing
 ### Test Kitchen / Serverspec
 * Includes Test-kitchen support for Ubuntu 12.04 and Centos 6.5 operating systems. The .kitchen.yml file defaults to the Vagrant driver. Universal Serverspec tests valid for both operating systems are included.
 
-License and Author
-------------------
+License & Authors
+-----------------
 
-Author:: Chef Software, Inc (support@getchef.com)  
-Author:: Charles Johnson (charles@getchef.com)  
-Author:: Nicolas Rycar (nrycar@getchef.com)  
-Author:: Julian Dunn (jdunn@getchef.com)
+Author:: Charles Johnson (charles@chef.io)  
+Author:: Nicolas Rycar (nrycar@chef.io)  
+Author:: Julian Dunn (jdunn@chef.io)
 
-
-Copyright:: 2014, Chef Software, Inc.
+```text
+Copyright:: 2014-2015, Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -79,12 +81,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-Contributing
-------------
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```
