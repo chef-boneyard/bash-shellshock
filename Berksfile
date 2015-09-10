@@ -1,7 +1,7 @@
-# vi: set ft=ruby :
-source 'https://api.berkshelf.com'
+source 'https://supermarket.chef.io'
 
 metadata
 
-cookbook 'apt', '~> 1.10.0'
-cookbook 'yum'
+group :integration do
+  cookbook 'apt'
+end
