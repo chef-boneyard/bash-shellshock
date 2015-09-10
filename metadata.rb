@@ -15,3 +15,6 @@ depends 'ohai', '~> 2.0'
   supports os
 end
 
+
+source_url 'https://github.com/chef-cookbooks/bash-shellshock' if respond_to?(:source_url)
+issues_url 'https://github.com/chef-cookbooks/bash-shellshock/issues' if respond_to?(:issues_url)
