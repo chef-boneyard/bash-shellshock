@@ -2,7 +2,7 @@
 # Cookbook Name:: bash-shellshock
 # Recipe:: remediate
 #
-# Copyright (C) 2014 CHEF Software, Inc. <support@getchef.com>
+# Copyright 2014-2015 Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
