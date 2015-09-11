@@ -4,7 +4,7 @@ describe 'bash-shellshock::remediate' do
   context 'when the [\'languages\'][\'bash\'][\'shellshock_vulnerable\'] '\
           'attribute is true' do
     let(:chef_run) do
-      runner = ChefSpec::Runner.new
+      runner = ChefSpec::ServerRunner.new
       runner.node.set['languages']['bash']['shellshock_vulnerable'] = true
       runner.converge(described_recipe)
     end

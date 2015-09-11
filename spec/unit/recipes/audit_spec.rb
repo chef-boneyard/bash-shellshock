@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'bash-shellshock::audit' do
   let(:chef_run) do
-    runner = ChefSpec::Runner.new
+    runner = ChefSpec::ServerRunner.new
     runner.converge(described_recipe)
   end
 

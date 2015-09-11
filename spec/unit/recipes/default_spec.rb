@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'bash-shellshock::default' do
   let(:chef_run) do
-    runner = ChefSpec::Runner.new
+    runner = ChefSpec::ServerRunner.new
     runner.node.set['languages']['bash']['shellshock_vulnerable'] = 'true'
     runner.converge(described_recipe)
   end
