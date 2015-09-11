@@ -2,7 +2,7 @@
 # Cookbook Name:: bash-shellshock
 # Attributes:: default
 #
-# Copyright (C) 2014 Chef Software, Inc. <support@getchef.com>
+# Copyright (C) 2014 Chef Software, Inc. <support@chef.io>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

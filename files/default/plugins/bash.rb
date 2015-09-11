@@ -1,5 +1,5 @@
 #
-# Author:: Julian C. Dunn (<jdunn@getchef.com>)
+# Author:: Julian C. Dunn (<jdunn@chef.io>)
 # Copyright:: Copyright (c) 2014, Chef Software, Inc.
 # License:: Apache License, Version 2.0
 #

@@ -25,7 +25,7 @@ Requirements
 
 ### Cookbook Dependencies:
 
-* ohai (https://supermarket.getchef.com/cookbooks/ohai)
+* ohai (https://supermarket.chef.io/cookbooks/ohai)
 
 Attributes
 ----------
@@ -43,7 +43,7 @@ Recipes
 
 * Installs an OHAI plugin that will automatically audit nodes for the Shellshock vulnerability. This plugin creates two new values in OHAI:
 
-  node['languages']['bash']['version'], a string. Returned from `bash --version`.  
+  node['languages']['bash']['version'], a string. Returned from `bash --version`.
   node['languages']['bash']['shellshock_vulnerable'], a boolean. True if node is vulnerable.
 
 ### bash-shellshock::remediate
@@ -63,8 +63,8 @@ Testing
 License & Authors
 -----------------
 
-Author:: Charles Johnson (charles@chef.io)  
-Author:: Nicolas Rycar (nrycar@chef.io)  
+Author:: Charles Johnson (charles@chef.io)
+Author:: Nicolas Rycar (nrycar@chef.io)
 Author:: Julian Dunn (jdunn@chef.io)
 
 ```text
