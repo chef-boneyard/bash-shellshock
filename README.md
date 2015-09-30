@@ -16,15 +16,15 @@ This cookbook relies on the OS-native packaging system to provide patched versio
 
 Requirements
 ------------
-
-### Platform:
-
+#### Platforms
 * Tested on CentOS 6.5
 * Tested on Ubuntu 12.04
 * Should work on a wide variety of other systems
 
-### Cookbook Dependencies:
+#### Chef
+- Chef 11+
 
+#### Cookbooks
 * ohai (https://supermarket.chef.io/cookbooks/ohai)
 
 Attributes
@@ -51,25 +51,15 @@ Recipes
 * If the node is marked vulnerable by the audit recipe, this recipe will attempt to upgrade bash via the native packaging system. Includes the audit recipe.
 * Audits and remediates Bash-CVE-2014-7169 ("Shellshock")
 
-Testing
--------
-
-### Chefspec
-* Includes a Chefspec suite. This can be run with rspec.
-
-### Test Kitchen / Serverspec
-* Includes Test-kitchen support for Ubuntu 12.04 and Centos 6.5 operating systems. The .kitchen.yml file defaults to the Vagrant driver. Universal Serverspec tests valid for both operating systems are included.
 
 License & Authors
 -----------------
 
-Author:: Charles Johnson (charles@chef.io)
-Author:: Nicolas Rycar (nrycar@chef.io)
-Author:: Julian Dunn (jdunn@chef.io)
+**Author:** Cookbook Engineering Team (<cookbooks@chef.io>)
 
-```text
-Copyright:: 2014-2015, Chef Software, Inc.
+**Copyright:** 20014-2015, Chef Software, Inc.
 
+```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
